@@ -34,7 +34,7 @@ public class CustomerController {
         return ResponseEntity.ok(customerService.create(customerDTO));
     }
 
-    @PutMapping("{id}")
+    @PutMapping
     public ResponseEntity<CustomerDTO> update(@RequestBody CustomerDTO customerDTO) {
         return ResponseEntity.ok(customerService.update(customerDTO));
     }

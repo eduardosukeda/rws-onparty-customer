@@ -14,7 +14,7 @@ public class Customer implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "cpf", length = 11, nullable = false)
+    @Column(name = "cpf", length = 11, nullable = false, unique = true)
     private String cpf;
 
     @Column(name = "name", length = 50, nullable = false)

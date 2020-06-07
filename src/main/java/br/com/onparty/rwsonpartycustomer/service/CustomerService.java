@@ -10,6 +10,8 @@ public interface CustomerService {
 
     public CustomerDTO findById(Integer id);
 
+    public CustomerDTO findByCnpj(String cnpj);
+
     public CustomerDTO create(CustomerDTO customerDTO);
 
     public CustomerDTO update(CustomerDTO customerDTO);

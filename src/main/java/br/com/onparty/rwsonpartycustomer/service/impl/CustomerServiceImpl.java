@@ -31,6 +31,13 @@ public class CustomerServiceImpl implements CustomerService {
         return new CustomerDTO(getCustomer(id));
     }
 
+    @Override
+    public CustomerDTO findByCnpj(String cnpj) {
+        Customer supplier = customerRepository.findCustomerByCpf(cnpj)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        return new CustomerDTO(supplier);
+    }
+
     private Customer getCustomer(Integer id) {
         return customerRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));

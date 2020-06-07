@@ -28,6 +28,11 @@ public class CustomerController {
         return ResponseEntity.ok(customerService.findById(id));
     }
 
+    @GetMapping("/cnpj/{cnpj}")
+    public ResponseEntity<CustomerDTO> findByCnpj(@PathVariable String cnpj) {
+        return ResponseEntity.ok(customerService.findByCnpj(cnpj));
+    }
+
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
     public ResponseEntity<CustomerDTO> create(@RequestBody CustomerDTO customerDTO) {
